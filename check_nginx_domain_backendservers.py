@@ -4,9 +4,9 @@
 __author__ = 'qiaokaiqiang'
 import os,re
 basedir=os.path.dirname(os.path.abspath(__file__))
-conf=basedir+'/servers/service-clean.xiaozhu.com.product.conf'
+conf=basedir+'servicexxx.conf'
 #confdir=basedir+'/servers/'
-confdir="/usr/local/xzsoft/nginx/conf/servers/"
+confdir="/etc/nginx/conf.d"
 def generate_dict(file,servername_with_backend={}):
         upstream_backend_pattern=re.compile(r'^\s*server\s+\b(?:[0-9]{1,3}\.){3}[0-9]{1,9}\b:80.*$')
         upstream_name_pattern=re.compile(r'^\s*upstream\s+(.*)\s*{')
