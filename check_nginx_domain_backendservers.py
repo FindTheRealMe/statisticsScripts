@@ -4,9 +4,15 @@
 __author__ = 'qiaokaiqiang'
 import os,re
 basedir=os.path.dirname(os.path.abspath(__file__))
+<<<<<<< HEAD
 conf=basedir+'/servers/service-clean.xiaozhu.com.product.conf'
 #confdir=basedir+'/servers/'
 confdir="/usr/local/xzsoft/nginx/conf/servers/"
+=======
+conf=basedir+'servicexxx.conf'
+#confdir=basedir+'/servers/'
+confdir="/etc/nginx/conf.d"
+>>>>>>> cb85164882e05fa1d219a7e8f07c153dd2565385
 def generate_dict(file,servername_with_backend={}):
         upstream_backend_pattern=re.compile(r'^\s*server\s+\b(?:[0-9]{1,3}\.){3}[0-9]{1,9}\b:80.*$')
         upstream_name_pattern=re.compile(r'^\s*upstream\s+(.*)\s*{')
@@ -31,7 +37,11 @@ def generate_dict(file,servername_with_backend={}):
                     upstream_l=[]
                     continue
 
+<<<<<<< HEAD
                 if ups_tag and  singleleftforward_brace_pattern.search(i):
+=======
+                if singleleftforward_brace_pattern.search(i):
+>>>>>>> cb85164882e05fa1d219a7e8f07c153dd2565385
                     ups_tag=False
                     upstream_l=[]
                     up_name=None
@@ -42,6 +52,10 @@ def generate_dict(file,servername_with_backend={}):
 
                 if up_name:
                     ups_d[up_name]=upstream_l
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb85164882e05fa1d219a7e8f07c153dd2565385
                 if server_name_pattern.search(i):
                     server_tag=True
                     server_name=server_name_pattern.search(i).group(1)
@@ -49,9 +63,13 @@ def generate_dict(file,servername_with_backend={}):
                 if server_tag:
                     if proxy_pass_pattern.search(i):
                         proxypass_ups=proxy_pass_pattern.search(i).group(1)
+<<<<<<< HEAD
 			if proxypass_ups in ups_d:
                     	    servername_proxypass_d[server_name]=proxypass_ups
 			    server_tag=False
+=======
+                        servername_proxypass_d[server_name]=proxypass_ups
+>>>>>>> cb85164882e05fa1d219a7e8f07c153dd2565385
             for k,v in servername_proxypass_d.iteritems():
 
                 if v in ups_d:
