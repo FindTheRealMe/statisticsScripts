@@ -65,7 +65,7 @@ def generate_dict(file,servername_with_backend={}):
         return servername_with_backend
 
 def settings(setarg):
-        domainPrincipalJsonStr='{"imserverchat.xiaozhu.com":"负责人1","opensmart.xiaozhu.com":"负责人2"}'
+        domainPrincipalJsonStr='{"domainmy.goolefx.com":"负责人1","domainmy2.goolefx.com":"负责人2"}'
         if setarg=='domainPrincipalDict':
 		domainPrincipalDict=json.loads(s=domainPrincipalJsonStr)
 		return domainPrincipalDict
